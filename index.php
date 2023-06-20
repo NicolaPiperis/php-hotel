@@ -57,6 +57,16 @@
 
             ];
 
+            // Funzione per ricavarsi il nome delle key
+            $keys = array_keys($hotels[0]);
+
+                    // // Funzione di risposta in base al valore dell'array
+                    // if($hotels["parking"] === false) {
+                    //     $hotels["parking"] = "not available"; 
+                    // }else{
+                    //     $hotels["parking"] = "available";
+                    // }
+
             echo "<ul>";
 
             foreach ($hotels as $hotel) {
@@ -81,9 +91,12 @@
                 <tr>
 
                     <?php
-                        foreach ($hotels as $hotel) {
-                            echo '<td scope="col">' . $hotel["name"] . '</td>';
+
+                        foreach ($keys as $key) {
+                            
+                            echo '<th scope="col">' . $key . '</th>';
                         }
+                        
                     ?>
                 
                 </tr>
@@ -91,9 +104,12 @@
                 <tr>
 
                     <?php
-                        foreach ($hotels as $hotel) {
-                            echo '<td scope="col">' . $hotel["description"] . '</td>';
-                        }
+
+                       echo '<td scope="col">' . $hotels[0]["name"] . '</td>';
+                       echo '<td scope="col">' . $hotels[0]["description"] . '</td>';
+                       echo '<td scope="col">' . $hotels[0]["parking"] . '</td>';
+                       echo '<td scope="col">' . $hotels[0]["vote"] . '</td>';
+                       echo '<td scope="col">' . $hotels[0]["distance_to_center"] . '</td>'; 
                     ?>
 
                 </tr>
@@ -101,12 +117,11 @@
                 <tr>
 
                     <?php
-                        foreach ($hotels as $hotel) {
-                            echo '<td scope="col">' . $hotel["parking"] . '</td>';
-                            if ($hotel["parking"] === false) {
-                                echo "none";
-                            }
-                        }
+                        echo '<td scope="col">' . $hotels[1]["name"] . '</td>';
+                        echo '<td scope="col">' . $hotels[1]["description"] . '</td>';
+                        echo '<td scope="col">' . $hotels[1]["parking"] . '</td>';
+                        echo '<td scope="col">' . $hotels[1]["vote"] . '</td>';
+                        echo '<td scope="col">' . $hotels[1]["distance_to_center"] . '</td>'; 
                     ?>
 
                 </tr>
@@ -114,18 +129,33 @@
                 <tr>
 
                     <?php
-                        foreach ($hotels as $hotel) {
-                            echo '<td scope="col">' . $hotel["vote"] . '</td>';
-                        }
+                        echo '<td scope="col">' . $hotels[2]["name"] . '</td>';
+                        echo '<td scope="col">' . $hotels[2]["description"] . '</td>';
+                        echo '<td scope="col">' . $hotels[2]["parking"] . '</td>';
+                        echo '<td scope="col">' . $hotels[2]["vote"] . '</td>';
+                        echo '<td scope="col">' . $hotels[2]["distance_to_center"] . '</td>'; 
                     ?>
                 </tr>
 
                 <tr>
 
                     <?php
-                        foreach ($hotels as $hotel) {
-                            echo '<td scope="col">' . $hotel["distance_to_center"] . '</td>';
-                        }
+                        echo '<td scope="col">' . $hotels[3]["name"] . '</td>';
+                        echo '<td scope="col">' . $hotels[3]["description"] . '</td>';
+                        echo '<td scope="col">' . $hotels[3]["parking"] . '</td>';
+                        echo '<td scope="col">' . $hotels[3]["vote"] . '</td>';
+                        echo '<td scope="col">' . $hotels[3]["distance_to_center"] . '</td>'; 
+                    ?>
+                </tr>
+
+                <tr>
+
+                    <?php
+                        echo '<td scope="col">' . $hotels[4]["name"] . '</td>';
+                        echo '<td scope="col">' . $hotels[4]["description"] . '</td>';
+                        echo '<td scope="col">' . $hotels[4]["parking"] . '</td>';
+                        echo '<td scope="col">' . $hotels[4]["vote"] . '</td>';
+                        echo '<td scope="col">' . $hotels[4]["distance_to_center"] . '</td>'; 
                     ?>
                 </tr>
 
