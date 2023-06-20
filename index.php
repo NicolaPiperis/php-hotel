@@ -60,15 +60,8 @@
             echo "<ul>";
 
             foreach ($hotels as $hotel) {
-                // echo "<li>" . $hotels . "</li>";
-                // echo "<pre>";
-                // echo var_dump($hotel);
-                // echo "</pre>";
 
                 foreach ($hotel as $hotelDetails) {
-                    // echo "<pre>";
-                    // echo var_dump($hotelDetails);
-                    // echo "</pre>";
 
                     echo "<li>" . $hotelDetails . "</li>";
                 }
@@ -76,41 +69,69 @@
 
             echo "</ul>";
 
-            echo "<br>";
-
-            echo 
-            '<table class="table">
-
-                <thead>
-
-                    <tr>' . foreach ($hotels as $hotel) {
-                        echo '<th scope="col">' . $hotel["name"] . '</th>'
-                    } .     
-                    
-                '</thead>
-                
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                </tbody>
-            </table>';
+            echo "<br>"
 
         ?>
+
+            
+        <table class="table">
+
+            <tbody>
+
+                <tr>
+
+                    <?php
+                        foreach ($hotels as $hotel) {
+                            echo '<td scope="col">' . $hotel["name"] . '</td>';
+                        }
+                    ?>
+                
+                </tr>
+
+                <tr>
+
+                    <?php
+                        foreach ($hotels as $hotel) {
+                            echo '<td scope="col">' . $hotel["description"] . '</td>';
+                        }
+                    ?>
+
+                </tr>
+
+                <tr>
+
+                    <?php
+                        foreach ($hotels as $hotel) {
+                            echo '<td scope="col">' . $hotel["parking"] . '</td>';
+                            if ($hotel["parking"] === false) {
+                                echo "none";
+                            }
+                        }
+                    ?>
+
+                </tr>
+
+                <tr>
+
+                    <?php
+                        foreach ($hotels as $hotel) {
+                            echo '<td scope="col">' . $hotel["vote"] . '</td>';
+                        }
+                    ?>
+                </tr>
+
+                <tr>
+
+                    <?php
+                        foreach ($hotels as $hotel) {
+                            echo '<td scope="col">' . $hotel["distance_to_center"] . '</td>';
+                        }
+                    ?>
+                </tr>
+
+            </tbody>
+
+        </table>
         
     </body>
 </html>
